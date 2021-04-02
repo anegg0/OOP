@@ -13,14 +13,18 @@ class Phrase {
     const ul = document.getElementById("phrase").firstElementChild;
 
     const splittedPhrase = this.phrase.split("");
-
     splittedPhrase.forEach((character) => {
       if (character !== " ") {
-        ul.appendChild(
-          `<li class="hide letter ${character}">${character}</li>`
-        );
+    const li = document.createElement("li");
+        li.setAttribute('class', `hide letter ${character}`);
+        li.textContent = character;
+        ul.appendChild(li);
+
       } else {
-        ul.appendChild(`<li class="space"> </li>`);
+    const li = document.createElement("li");
+        li.setAttribute('class', 'space');
+        li.textContent = character;
+        ul.appendChild(li);
       }
     });
   }
