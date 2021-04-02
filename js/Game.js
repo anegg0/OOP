@@ -23,7 +23,8 @@ getRandomPhrase() {
     let randomNumber = Math.floor(Math.random()*5);
     return this.phrases[randomNumber];
 }
-// startGame() {
-// document.getElementById('overlay').style.display = 'none';
-// }
+startGame() {
+document.getElementById('overlay').style.display = 'none';
+this.getRandomPhrase().addPhraseToDisplay();
+}
 }
