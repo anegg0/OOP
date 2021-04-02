@@ -13,7 +13,7 @@ class Game {
 * @return {array} An array of phrases that could be used in the game
 */
 createPhrases() {
-return ['he ate a blue frog','loneliness is everywhere','to be successful you have to be miserable','tomorrow will be better or worse','my grandmother is a hairy troll'];
+return [new Phrase('he ate a blue frog'),new Phrase('loneliness is everywhere'),new Phrase('to be successful you have to be miserable'),new Phrase('tomorrow will be better or worse'),new Phrase('my grandmother is a hairy troll')];
 }
 /**
 * Selects random phrase from phrases property

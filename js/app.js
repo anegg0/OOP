@@ -21,3 +21,11 @@
 // logPhrase(game.getRandomPhrase());
 // logPhrase(game.getRandomPhrase());
 // logPhrase(game.getRandomPhrase());
+// const game = new Game();
+// game.phrases.forEach((phrase, index) => {
+// console.log(`Phrase ${index} - phrase: ${phrase.phrase}`);
+// });
+// game.getRandomPhrase();
+
+const game = new Game();
+game.getRandomPhrase().addPhraseToDisplay();

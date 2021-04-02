@@ -3,14 +3,25 @@
  * Phrase.js */
 
 class Phrase {
-constructor(phrase) {
+  constructor(phrase) {
     this.phrase = phrase.toLowerCase();
-}
-/**
-* Display phrase on game board
-*/
-addPhraseToDisplay() {
-const slot = document.getElementById('phrase').firstChild;
+  }
+  /**
+   * Display phrase on game board
+   */
+  addPhraseToDisplay() {
+    const ul = document.getElementById("phrase").firstElementChild;
 
-}
+    const splittedPhrase = this.phrase.split("");
+
+    splittedPhrase.forEach((character) => {
+      if (character !== " ") {
+        ul.appendChild(
+          `<li class="hide letter ${character}">${character}</li>`
+        );
+      } else {
+        ul.appendChild(`<li class="space"> </li>`);
+      }
+    });
+  }
 }
