@@ -6,7 +6,7 @@ class Game {
     constructor() {
         this.missed = 0;
         this.phrases = this.createPhrases();
-        this.activePhrase = this.selectedPhrase;
+        this.activePhrase = this.getRandomPhrase();
     }
 /**
 * Creates phrases for use in game
@@ -22,11 +22,11 @@ return [new Phrase('he ate a blue frog'),new Phrase('loneliness is everywhere'),
 getRandomPhrase() {
     let randomNumber = Math.floor(Math.random()*5);
     let selectedPhrase = this.phrases[randomNumber];
-    console.log(selectedPhrase);
     return selectedPhrase;
 }
 startGame() {
 document.getElementById('overlay').style.display = 'none';
-this.getRandomPhrase().addPhraseToDisplay();
+// this.getRandomPhrase().addPhraseToDisplay();
+this.activePhrase.addPhraseToDisplay();
 }
 }
