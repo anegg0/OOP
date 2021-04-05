@@ -35,22 +35,10 @@ class Phrase {
 * Checks if passed letter is in phrase
 * @param (string) letter - Letter to check
 */
-checkLetter(letter) {
-    const splittedPhrase = this.phrase.split("");
-    console.log(splittedPhrase);
-    // const splittedPhraseWithoutSpaces = splittedPhrase.filter(character => character !== " ");
-    let result;
-    splittedPhrase.find(findLetter);
-     function findLetter(letter) {
-      if (letter) {
-        result = true;
-      } else if (!letter) {
-        result = false;
-      }
+checkLetter(string) {
+    const selectedPhrase = this.phrase;
+    return selectedPhrase.includes(string);
     }
-    return result;
-}
-
 /**
 * Displays passed letter on screen after a match is found
 * @param (string) letter - Letter to display
