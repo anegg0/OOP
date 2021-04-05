@@ -9,5 +9,4 @@ const btnReset = document.getElementById('btn__reset');
 btnReset.addEventListener('click', (e) => {
     game = new Game();
     game.startGame();
-    game.checkForWin();
 });

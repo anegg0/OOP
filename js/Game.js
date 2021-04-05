@@ -49,15 +49,18 @@ won
   checkForWin() {
     const ul = document.getElementById("phrase");
     const letters = ul.getElementsByTagName("li");
-    let totalLettersToMatch = letters.length;
+    // console.log(totalLettersToMatch);
+    let totalLettersMatched;
+    let totalLettersToMatch;
     for (var i = 0; i < letters.length; ++i) {
       if (
         letters[i].className === `show letter ${this.activePhrase.phrase[i]}`
       ) {
-          totalLettersMatched += 1;
-        console.log(this.activePhrase.phrase[i]);
-        console.log(letters[i].className);
-        // this.activePhrase.forEach(element => {
+        totalLettersMatched += 1;
+        // console.log(this.activePhrase.phrase[i]);
+        // console.log(letters[i].className);
+      } else if (letters[i].className === "space") {
+        totalLettersMatched += 1;
       }
     }
       if (totalLettersMatched === totalLettersToMatch) {
