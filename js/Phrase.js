@@ -16,14 +16,13 @@ class Phrase {
     const splittedPhrase = this.phrase.split("");
     splittedPhrase.forEach((character) => {
       if (character !== " ") {
-    const li = document.createElement("li");
-        li.setAttribute('class', `hide letter ${character}`);
+        const li = document.createElement("li");
+        li.setAttribute("class", `hide letter ${character}`);
         li.textContent = character;
         ul.appendChild(li);
-
       } else {
-    const li = document.createElement("li");
-        li.setAttribute('class', 'space');
+        const li = document.createElement("li");
+        li.setAttribute("class", "space");
         li.textContent = character;
         ul.appendChild(li);
       }
@@ -32,28 +31,25 @@ class Phrase {
   }
 
   /**
-* Checks if passed letter is in phrase
-* @param (string) letter - Letter to check
-*/
-checkLetter(string) {
+   * Checks if passed letter is in phrase
+   * @param (string) letter - Letter to check
+   */
+  checkLetter(string) {
     const selectedPhrase = this.phrase;
     return selectedPhrase.includes(string);
-    }
-/**
-* Displays passed letter on screen after a match is found
-* @param (string) letter - Letter to display
-*/
-showMatchedLetter(letter) {
-    let winLetterCounter = 0;
-    console.log(this.phrase);
-    this.phrase.forEach((character) => {
+  }
+  /**
+   * Displays passed letter on screen after a match is found
+   * @param (string) letter - Letter to display
+   */
+  showMatchedLetter(letter) {
+    const splittedPhrase = this.phrase.split("");
+    splittedPhrase.forEach((character) => {
       if (character === letter) {
-        winLetterCounter += 1;
-    const htmlLetter = document.getElementsByClassName(`hide letter ${character}`);
-        htmlLetter.classList.remove(`hide letter ${character}`);
-        htmlLetter.classList.add(`show letter ${character}`);
+        const htmlLetter = document.querySelector(`.hide.letter.${character}`);
+        htmlLetter.classList.remove('hide');
+        htmlLetter.classList.add('show');
       }
     });
-    this.winLetterCounter = winLetterCounter;
-}
+  }
 }

@@ -15,7 +15,7 @@ class Game {
    */
   createPhrases() {
     return [
-      new Phrase("he ate a blue frog"),
+      new Phrase("he"),
       new Phrase("loneliness is everywhere"),
       new Phrase("to be successful you have to be miserable"),
       new Phrase("tomorrow will be worse"),
@@ -49,31 +49,25 @@ won
   checkForWin() {
     const ul = document.getElementById("phrase");
     const letters = ul.getElementsByTagName("li");
-    // console.log(totalLettersToMatch);
-    let totalLettersMatched;
-    let totalLettersToMatch;
+    let res;
     for (var i = 0; i < letters.length; ++i) {
       if (
-        letters[i].className === `show letter ${this.activePhrase.phrase[i]}`
-      ) {
-        totalLettersMatched += 1;
-        // console.log(this.activePhrase.phrase[i]);
-        // console.log(letters[i].className);
-      } else if (letters[i].className === "space") {
-        totalLettersMatched += 1;
-      }
-    }
-      if (totalLettersMatched === totalLettersToMatch) {
-          return true;
-      }
+        letters[i].className === `hide letter ${this.activePhrase.phrase[i]}`)
+       {
+           res = false;
+       } else {
+           res = true;
+       }
   }
+    return res;
+}
 
   /**
    * Increases the value of the missed property
    * Removes a life from the scoreboard
    * Checks if player has remaining lives and ends game if player is out
    */
-  removeLife() {}
+//   removeLife() {}
 
   /**
    * Displays game over message
