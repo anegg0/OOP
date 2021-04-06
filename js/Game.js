@@ -67,7 +67,16 @@ won
    * Removes a life from the scoreboard
    * Checks if player has remaining lives and ends game if player is out
    */
-//   removeLife() {}
+  removeLife() {
+    const lives = document.querySelectorAll(".tries");
+    this.missed += 1;
+    let nextRemainingTry = lives[this.missed -1];
+    let image = nextRemainingTry.firstChild;
+    image.src="./images/lostHeart.png";
+    if (this.missed === 5) {
+        this.gameOver(true);
+    }
+  }
 
   /**
    * Displays game over message
