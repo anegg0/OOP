@@ -16,10 +16,15 @@ class Game {
   createPhrases() {
     return [
       new Phrase("he"),
-      new Phrase("loneliness is everywhere"),
-      new Phrase("to be successful you have to be miserable"),
-      new Phrase("tomorrow will be worse"),
-      new Phrase("my grandmother is a hairy troll"),
+      new Phrase("he"),
+      new Phrase("he"),
+      new Phrase("he"),
+      new Phrase("he"),
+      // new Phrase("he ate a blue frog"),
+      // new Phrase("loneliness is everywhere"),
+      // new Phrase("to be successful you have to be miserable"),
+      // new Phrase("tomorrow will be worse"),
+      // new Phrase("my grandmother is a hairy troll"),
     ];
   }
 
@@ -96,5 +101,8 @@ won
     overlay.classList.remove('start');
     overlay.classList.add('lose');
       }
+  }
+  handleInteraction() {
+
   }
 }
