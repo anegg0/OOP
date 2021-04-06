@@ -83,17 +83,15 @@ won
    * @param {boolean} gameWon - Whether or not the user won the game
    */
   gameOver(gameWon) {
-    const h1 = document.getElementsByTagName('h1');
+    const h1 = document.querySelector('#game-over-message');
     const overlay = document.querySelector('#overlay');
-    console.log(h1);
       if (gameWon === true) {
     overlay.classList.remove('start');
     overlay.classList.add('win');
     document.getElementById("overlay").style.display = "flex";
-    h1.textContent = 'pouet';
+    h1.textContent = 'You made it!';
       } else if (gameWon === false) {
-          console.log('rabajoi');
-    h1.textContent = 'pouet';
+    h1.textContent = 'Better luck next time! Why not try again?';
     document.getElementById("overlay").style.display = "flex";
     overlay.classList.remove('start');
     overlay.classList.add('lose');
