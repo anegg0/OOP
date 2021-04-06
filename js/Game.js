@@ -15,11 +15,11 @@ class Game {
    */
   createPhrases() {
     return [
-      new Phrase("he"),
-      new Phrase("he"),
-      new Phrase("he"),
-      new Phrase("he"),
-      new Phrase("he"),
+      new Phrase("ha"),
+      new Phrase("ha"),
+      new Phrase("ha"),
+      new Phrase("ha"),
+      new Phrase("ha"),
       // new Phrase("he ate a blue frog"),
       // new Phrase("loneliness is everywhere"),
       // new Phrase("to be successful you have to be miserable"),
@@ -79,7 +79,7 @@ won
     let image = nextRemainingTry.firstChild;
     image.src="./images/lostHeart.png";
     if (this.missed === 5) {
-        this.gameOver(true);
+        this.gameOver(false);
     } 
   }
 
@@ -102,7 +102,29 @@ won
     overlay.classList.add('lose');
       }
   }
-  handleInteraction() {
-
+  /**
+* Handles onscreen keyboard button clicks
+* @param (HTMLButtonElement) button - The clicked button element
+*/
+  handleInteraction(button) {
+    // console.log(button.textContent);
+    button.disabled = true;
+    let res;
+    if (this.activePhrase.checkLetter(button.textContent) === true) {
+     console.log(true); 
+     res = true;
+    button.classList.add('chosen');
+    this.activePhrase.showMatchedLetter(button.textContent);
+    if (this.checkForWin() === true) {
+      this.gameOver(true);
+    }
+    ;
+    } else {
+     console.log(false); 
+     res = false;
+    button.classList.add('wrong');
+    this.removeLife();
+    }
+  // return this.activePhrase.checkLetter(button.textContent);
   }
 }

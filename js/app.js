@@ -13,128 +13,128 @@ btnReset.addEventListener('click', (e) => {
 
 const keyA = document.querySelector('#a');
 keyA.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyA);
 });
 
 
 const keyB = document.querySelector('#b');
 keyB.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyB);
 });
 
 
 const keyC = document.querySelector('#c');
 keyC.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyC);
 });
 
 
 const keyD = document.querySelector('#d');
 keyD.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyD);
 });
 
 const keyE = document.querySelector('#e');
 keyE.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyE);
 });
 
 const keyF = document.querySelector('#f');
 keyF.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyF);
 });
 
 const keyG = document.querySelector('#g');
 keyG.addEventListener('click', (e) => {
-console.log('works');
+    game.handleInteraction(keyG);
 });
 
 const keyH = document.querySelector('#h');
 keyH.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyH);
 });
 
 const keyI = document.querySelector('#i');
 keyI.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyI);
 });
 
 const keyJ = document.querySelector('#j');
 keyJ.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyJ);
 });
 
 const keyK = document.querySelector('#k');
 keyK.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyK);
 });
 
 const keyL = document.querySelector('#l');
 keyL.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyL);
 });
 
-const keyM = document.querySelector('#n');
+const keyM = document.querySelector('#m');
 keyM.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyM);
 });
 
 const keyN = document.querySelector('#n');
 keyN.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyN);
 });
 
 const keyO = document.querySelector('#o');
 keyO.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyO);
 });
 
 const keyQ = document.querySelector('#q');
 keyQ.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyQ);
 });
 
 const keyR = document.querySelector('#r');
 keyR.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyR);
 });
 
 const keyS = document.querySelector('#s');
 keyS.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyS);
 });
 
 const keyT = document.querySelector('#t');
 keyT.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyT);
 });
 
 const keyU = document.querySelector('#u');
 keyU.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyU);
 });
 
 const keyV = document.querySelector('#v');
 keyV.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyV);
 });
 
 const keyW = document.querySelector('#w');
 keyW.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyW);
 });
 
 const keyX = document.querySelector('#x');
 keyX.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyX);
 });
 
 const keyY = document.querySelector('#y');
 keyY.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyY);
 });
 
 const keyZ = document.querySelector('#z');
 keyZ.addEventListener('click', (e) => {
-console.log('works');
+game.handleInteraction(keyZ);
 });
