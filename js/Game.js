@@ -75,13 +75,28 @@ won
     image.src="./images/lostHeart.png";
     if (this.missed === 5) {
         this.gameOver(true);
-    }
+    } 
   }
 
   /**
    * Displays game over message
    * @param {boolean} gameWon - Whether or not the user won the game
    */
-  // gameOver(gameWon) {
-  // }
+  gameOver(gameWon) {
+    const h1 = document.getElementsByTagName('h1');
+    const overlay = document.querySelector('#overlay');
+    console.log(h1);
+      if (gameWon === true) {
+    overlay.classList.remove('start');
+    overlay.classList.add('win');
+    document.getElementById("overlay").style.display = "flex";
+    h1.textContent = 'pouet';
+      } else if (gameWon === false) {
+          console.log('rabajoi');
+    h1.textContent = 'pouet';
+    document.getElementById("overlay").style.display = "flex";
+    overlay.classList.remove('start');
+    overlay.classList.add('lose');
+      }
+  }
 }
