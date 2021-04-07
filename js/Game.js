@@ -109,22 +109,47 @@ won
   handleInteraction(button) {
     // console.log(button.textContent);
     button.disabled = true;
-    let res;
+    // let res;
     if (this.activePhrase.checkLetter(button.textContent) === true) {
-     console.log(true); 
-     res = true;
+    //  console.log(true); 
+    //  res = true;
     button.classList.add('chosen');
     this.activePhrase.showMatchedLetter(button.textContent);
     if (this.checkForWin() === true) {
       this.gameOver(true);
+      this.gameReset();
     }
-    ;
     } else {
-     console.log(false); 
-     res = false;
+    //  console.log(false); 
+    //  res = false;
     button.classList.add('wrong');
     this.removeLife();
     }
   // return this.activePhrase.checkLetter(button.textContent);
+  }
+
+  gameReset() {
+  const phraseElement = document.querySelector("#phrase");
+  const ulPhraseElement = phraseElement.querySelector("ul");
+  while (ulPhraseElement.firstChild) {
+    ulPhraseElement.removeChild(ulPhraseElement.firstChild);
+  }
+// Enable all of the onscreen keyboard buttons and update each to use the `key` CSS class,
+// and not use the `chosen` or `wrong` CSS classes.
+  const buttons = document.querySelectorAll('.key');
+  buttons.forEach(button => {
+    button.classList.remove('chosen');
+    button.classList.remove('wrong');
+    button.disabled = false;
+  });
+    const lives = document.querySelectorAll(".tries");
+    console.log(lives);
+    // let image = lives.firstChild;
+    lives.forEach(image => {
+    image.src="./images/liveHeart.png";
+    });
+    // let nextRemainingTry = lives[this.missed -1];
+    // let image = nextRemainingTry.firstChild;
+    // image.src="./images/lostHeart.png";
   }
 }
