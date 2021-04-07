@@ -87,8 +87,8 @@ keyO.addEventListener("click", (e) => {
   game.handleInteraction(keyO);
 });
 
-const keyP = document.querySelector("#o");
-keyO.addEventListener("click", (e) => {
+const keyP = document.querySelector("#p");
+keyP.addEventListener("click", (e) => {
   game.handleInteraction(keyP);
 });
 

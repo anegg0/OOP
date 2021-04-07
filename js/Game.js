@@ -15,16 +15,16 @@ class Game {
    */
   createPhrases() {
     return [
-      new Phrase("ha"),
-      new Phrase("ha"),
-      new Phrase("ha"),
-      new Phrase("ha"),
-      new Phrase("ha"),
-      // new Phrase("he ate a blue frog"),
-      // new Phrase("loneliness is everywhere"),
-      // new Phrase("to be successful you have to be miserable"),
-      // new Phrase("tomorrow will be worse"),
-      // new Phrase("my grandmother is a hairy troll"),
+      // new Phrase("ha"),
+      // new Phrase("ha"),
+      // new Phrase("ha"),
+      // new Phrase("ha"),
+      // new Phrase("ha"),
+      new Phrase("he ate a blue frog"),
+      new Phrase("loneliness is everywhere"),
+      new Phrase("to be successful you have to be miserable"),
+      new Phrase("tomorrow will be worse"),
+      new Phrase("my grandmother is a hairy troll"),
     ];
   }
 
@@ -52,18 +52,22 @@ class Game {
 won
 */
   checkForWin() {
-    const ul = document.getElementById("phrase");
-    const letters = ul.getElementsByTagName("li");
+    // const ul = document.getElementById("phrase");
+    // console.log(ul);
+    // const letters = ul.getElementsByTagName("li");
+    const unguessedLetters = document.querySelectorAll('.hide');
+    console.log(unguessedLetters);
     let res;
-    for (var i = 0; i < letters.length; ++i) {
-      if (
-        letters[i].className === `hide letter ${this.activePhrase.phrase[i]}`)
-       {
+    // for (var i = 0; i < unguessedLetters.length; ++i) {
+      if (unguessedLetters.length !== 0)
+  //       letters[i].className === `hide letter ${this.activePhrase.phrase[i]}`)
+  //      {
            res = false;
-       } else {
+  //      } 
+       else {
            res = true;
        }
-  }
+  // }
     return res;
 }
 
@@ -108,11 +112,11 @@ won
 */
   handleInteraction(button) {
     // console.log(button.textContent);
-    button.disabled = true;
     // let res;
     if (this.activePhrase.checkLetter(button.textContent) === true) {
     //  console.log(true); 
     //  res = true;
+    button.disabled = true;
     button.classList.add('chosen');
     this.activePhrase.showMatchedLetter(button.textContent);
     if (this.checkForWin() === true) {
