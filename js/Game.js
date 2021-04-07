@@ -19,7 +19,7 @@ class Game {
       // new Phrase("ha"),
       // new Phrase("ha"),
       // new Phrase("ha"),
-      // new Phrase("ha"),
+      // new Phrase("ha")
       new Phrase("he ate a blue frog"),
       new Phrase("loneliness is everywhere"),
       new Phrase("to be successful you have to be miserable"),
@@ -146,14 +146,22 @@ won
     button.classList.remove('wrong');
     button.disabled = false;
   });
-    const lives = document.querySelectorAll(".tries");
-    console.log(lives);
-    // let image = lives.firstChild;
-    lives.forEach(image => {
-    image.src="./images/liveHeart.png";
-    });
+    // const lives = document.querySelectorAll(".tries");
+    // console.log(lives);
+    // // let image = lives.firstChild;
+    // lives.forEach(image => {
+    // image.src="./images/liveHeart.png";
+    // });
     // let nextRemainingTry = lives[this.missed -1];
     // let image = nextRemainingTry.firstChild;
     // image.src="./images/lostHeart.png";
+ const scoreboard = Array.from(document.getElementsByTagName("img"));
+  scoreboard.forEach(image => {
+    image.src = "./images/liveHeart.png";
+  });
+  // const ulScoreboard = scoreboard.querySelector("ol");
+  // const liScoreBoard = ulScoreboard.firstChild.innerHTML;
+  console.log(scoreboard);
+    
   }
 }
