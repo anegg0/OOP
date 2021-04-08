@@ -55,21 +55,21 @@ won
     // const ul = document.getElementById("phrase");
     // console.log(ul);
     // const letters = ul.getElementsByTagName("li");
-    const unguessedLetters = document.querySelectorAll('.hide');
-    console.log(unguessedLetters);
+    const unguessedLetters = document.querySelectorAll(".hide");
+    // console.log(unguessedLetters);
     let res;
     // for (var i = 0; i < unguessedLetters.length; ++i) {
-      if (unguessedLetters.length !== 0)
-  //       letters[i].className === `hide letter ${this.activePhrase.phrase[i]}`)
-  //      {
-           res = false;
-  //      } 
-       else {
-           res = true;
-       }
-  // }
+    if (unguessedLetters.length !== 0)
+      //       letters[i].className === `hide letter ${this.activePhrase.phrase[i]}`)
+      //      {
+      res = false;
+    //      }
+    else {
+      res = true;
+    }
+    // }
     return res;
-}
+  }
 
   /**
    * Increases the value of the missed property
@@ -79,89 +79,89 @@ won
   removeLife() {
     const lives = document.querySelectorAll(".tries");
     this.missed += 1;
-    let nextRemainingTry = lives[this.missed -1];
+    let nextRemainingTry = lives[this.missed - 1];
     let image = nextRemainingTry.firstChild;
-    image.src="./images/lostHeart.png";
-    if (this.missed === 5) {
-        this.gameOver(false);
-    } 
-  }
+    image.src = "./images/lostHeart.png";
+    // if (this.missed === 5) {
+    //   this.gameOver(false);
+    //   this.gameReset();
+    }
 
   /**
    * Displays game over message
    * @param {boolean} gameWon - Whether or not the user won the game
    */
   gameOver(gameWon) {
-    const h1 = document.querySelector('#game-over-message');
-    const overlay = document.querySelector('#overlay');
-      if (gameWon === true) {
-    overlay.classList.remove('start');
-    overlay.classList.add('win');
-    document.getElementById("overlay").style.display = "flex";
-    h1.textContent = 'You made it!';
-      } else if (gameWon === false) {
-    h1.textContent = 'Better luck next time! Why not try again?';
-    document.getElementById("overlay").style.display = "flex";
-    overlay.classList.remove('start');
-    overlay.classList.add('lose');
-      }
+    const h1 = document.querySelector("#game-over-message");
+    const overlay = document.querySelector("#overlay");
+    if (gameWon === true) {
+      overlay.classList.remove("start");
+      overlay.classList.add("win");
+      document.getElementById("overlay").style.display = "flex";
+      h1.textContent = "You made it!";
+    } else if (gameWon === false) {
+      overlay.classList.remove("start");
+      overlay.classList.add("lose");
+      document.getElementById("overlay").style.display = "flex";
+      h1.textContent = "Better luck next time! Why not try again?";
+    }
   }
   /**
-* Handles onscreen keyboard button clicks
-* @param (HTMLButtonElement) button - The clicked button element
-*/
+   * Handles onscreen keyboard button clicks
+   * @param (HTMLButtonElement) button - The clicked button element
+   */
   handleInteraction(button) {
     // console.log(button.textContent);
     // let res;
     if (this.activePhrase.checkLetter(button.textContent) === true) {
-    //  console.log(true); 
-    //  res = true;
-    button.disabled = true;
-    button.classList.add('chosen');
-    this.activePhrase.showMatchedLetter(button.textContent);
-    if (this.checkForWin() === true) {
-      this.gameOver(true);
+      //  console.log(true);
+      //  res = true;
+      button.disabled = true;
+      button.classList.add("chosen");
+      this.activePhrase.showMatchedLetter(button.textContent);
+      // return this.activePhrase.checkLetter(button.textContent);
+    } else if (this.activePhrase.checkLetter(button.textContent) !== true) {
+
+      button.disabled = true;
+      button.classList.remove("chosen");
+        button.classList.add("wrong");
+        this.removeLife();
+    }
+      if (this.checkForWin() === true) {
+        this.gameOver(true);
+        this.gameReset();
+      } 
+      if (this.missed === 5)
+     {
+      this.gameOver(false);
       this.gameReset();
-    }
-    } else {
-    //  console.log(false); 
-    //  res = false;
-    button.classList.add('wrong');
-    this.removeLife();
-    }
-  // return this.activePhrase.checkLetter(button.textContent);
+      //  else if (there are no lives left) {
+      // button.classList.remove("chosen");
+      //   button.classList.add("wrong");
+      //   this.removeLife();
+      //   // this.gameReset();
+      }
+    
   }
 
   gameReset() {
-  const phraseElement = document.querySelector("#phrase");
-  const ulPhraseElement = phraseElement.querySelector("ul");
-  while (ulPhraseElement.firstChild) {
-    ulPhraseElement.removeChild(ulPhraseElement.firstChild);
-  }
-// Enable all of the onscreen keyboard buttons and update each to use the `key` CSS class,
-// and not use the `chosen` or `wrong` CSS classes.
-  const buttons = document.querySelectorAll('.key');
-  buttons.forEach(button => {
-    button.classList.remove('chosen');
-    button.classList.remove('wrong');
-    button.disabled = false;
-  });
-    // const lives = document.querySelectorAll(".tries");
-    // console.log(lives);
-    // // let image = lives.firstChild;
-    // lives.forEach(image => {
-    // image.src="./images/liveHeart.png";
-    // });
-    // let nextRemainingTry = lives[this.missed -1];
-    // let image = nextRemainingTry.firstChild;
-    // image.src="./images/lostHeart.png";
- const scoreboard = Array.from(document.getElementsByTagName("img"));
-  scoreboard.forEach(image => {
-    image.src = "./images/liveHeart.png";
-  });
-  // const ulScoreboard = scoreboard.querySelector("ol");
-  // const liScoreBoard = ulScoreboard.firstChild.innerHTML;
-  console.log(scoreboard);
-    
+    const phraseElement = document.querySelector("#phrase");
+    const ulPhraseElement = phraseElement.querySelector("ul");
+    while (ulPhraseElement.firstChild) {
+      ulPhraseElement.removeChild(ulPhraseElement.firstChild);
+    }
+    // Enable all of the onscreen keyboard buttons and update each to use the `key` CSS class,
+    // and not use the `chosen` or `wrong` CSS classes.
+    const buttons = document.querySelectorAll(".key");
+    buttons.forEach((button) => {
+      button.classList.remove("chosen");
+      button.classList.remove("wrong");
+      button.disabled = false;
+    });
+    const scoreboard = Array.from(document.getElementsByTagName("img"));
+    scoreboard.forEach((image) => {
+      image.src = "./images/liveHeart.png";
+    });
+    console.log(scoreboard);
   }
 }
