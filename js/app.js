@@ -2,9 +2,6 @@
  * Project 4 - OOP Game App
  * app.js */
 let game;
-// console.log(game);
-// game.startGame();
-// console.log(`Active Phrase - phrase: ${game.activePhrase.phrase.length}`);
 const btnReset = document.getElementById("btn__reset");
 btnReset.addEventListener("click", (e) => {
   game = new Game();
@@ -12,7 +9,7 @@ btnReset.addEventListener("click", (e) => {
 
 });
 
-const keyA = document.querySelector("#a");
+const KeyA = Array.from(document.querySelectorAll('.key'));
 keyA.addEventListener("click", (e) => {
   game.handleInteraction(keyA);
 });
