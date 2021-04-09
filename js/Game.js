@@ -30,13 +30,16 @@ class Game {
   getRandomPhrase() {
     let randomNumber = Math.floor(Math.random() * 5);
     let selectedPhrase = this.phrases[randomNumber];
-    this.activePhrase = selectedPhrase;
     return selectedPhrase;
   }
-
   startGame() {
     document.getElementById("overlay").style.display = "none";
-    this.getRandomPhrase().addPhraseToDisplay();
+    // this.getRandomPhrase().addPhraseToDisplay();
+    let selectedPhrase = this.getRandomPhrase();
+    this.activePhrase = selectedPhrase;
+    selectedPhrase.addPhraseToDisplay();
+    // console.log(this.activePhrase);
+    console.log(selectedPhrase);
   }
 
   /**
