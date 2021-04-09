@@ -15,11 +15,6 @@ class Game {
    */
   createPhrases() {
     return [
-      // new Phrase("ha"),
-      // new Phrase("ha"),
-      // new Phrase("ha"),
-      // new Phrase("ha"),
-      // new Phrase("ha")
       new Phrase("he ate a blue frog"),
       new Phrase("loneliness is everywhere"),
       new Phrase("to be successful you have to be miserable"),
@@ -42,8 +37,6 @@ class Game {
   startGame() {
     document.getElementById("overlay").style.display = "none";
     this.getRandomPhrase().addPhraseToDisplay();
-    // this.activePhrase.addPhraseToDisplay();
-    // console.log(`this.activePhrase: ${this.activePhrase.phrase.length}`);
   }
 
   /**
@@ -52,22 +45,13 @@ class Game {
 won
 */
   checkForWin() {
-    // const ul = document.getElementById("phrase");
-    // console.log(ul);
-    // const letters = ul.getElementsByTagName("li");
     const unguessedLetters = document.querySelectorAll(".hide");
-    // console.log(unguessedLetters);
     let res;
-    // for (var i = 0; i < unguessedLetters.length; ++i) {
     if (unguessedLetters.length !== 0)
-      //       letters[i].className === `hide letter ${this.activePhrase.phrase[i]}`)
-      //      {
       res = false;
-    //      }
     else {
       res = true;
     }
-    // }
     return res;
   }
 
@@ -82,9 +66,6 @@ won
     let nextRemainingTry = lives[this.missed - 1];
     let image = nextRemainingTry.firstChild;
     image.src = "./images/lostHeart.png";
-    // if (this.missed === 5) {
-    //   this.gameOver(false);
-    //   this.gameReset();
     }
 
   /**
@@ -111,15 +92,10 @@ won
    * @param (HTMLButtonElement) button - The clicked button element
    */
   handleInteraction(button) {
-    // console.log(button.textContent);
-    // let res;
     if (this.activePhrase.checkLetter(button.textContent) === true) {
-      //  console.log(true);
-      //  res = true;
       button.disabled = true;
       button.classList.add("chosen");
       this.activePhrase.showMatchedLetter(button.textContent);
-      // return this.activePhrase.checkLetter(button.textContent);
     } else if (this.activePhrase.checkLetter(button.textContent) !== true) {
 
       button.disabled = true;
@@ -135,11 +111,6 @@ won
      {
       this.gameOver(false);
       this.gameReset();
-      //  else if (there are no lives left) {
-      // button.classList.remove("chosen");
-      //   button.classList.add("wrong");
-      //   this.removeLife();
-      //   // this.gameReset();
       }
     
   }
@@ -150,8 +121,6 @@ won
     while (ulPhraseElement.firstChild) {
       ulPhraseElement.removeChild(ulPhraseElement.firstChild);
     }
-    // Enable all of the onscreen keyboard buttons and update each to use the `key` CSS class,
-    // and not use the `chosen` or `wrong` CSS classes.
     const buttons = document.querySelectorAll(".key");
     buttons.forEach((button) => {
       button.classList.remove("chosen");
@@ -162,6 +131,5 @@ won
     scoreboard.forEach((image) => {
       image.src = "./images/liveHeart.png";
     });
-    console.log(scoreboard);
   }
 }
