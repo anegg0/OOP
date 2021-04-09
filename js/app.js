@@ -11,7 +11,6 @@ btnReset.addEventListener("click", (e) => {
 const qwerty = document.querySelector('#qwerty');
 const letters = qwerty.querySelectorAll('.key');
 console.log(letters);
-// console.log(letters[7]);
 
 
 const keyA = letters[10];
@@ -24,19 +23,16 @@ keyB.addEventListener("click", (e) => {
   game.handleInteraction(keyB);
 });
 
-// const keyC = document.querySelector("#c");
 const keyC = letters[21];
 keyC.addEventListener("click", (e) => {
   game.handleInteraction(keyC);
 });
 
-// const keyD = document.querySelector("#d");
 const keyD = letters[12];
 keyD.addEventListener("click", (e) => {
   game.handleInteraction(keyD);
 });
 
-// const keyE = document.querySelector("#e");
 const keyE = letters[2];
 keyE.addEventListener("click", (e) => {
   game.handleInteraction(keyE);
