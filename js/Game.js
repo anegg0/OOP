@@ -47,9 +47,9 @@ won
   checkForWin() {
     const unguessedLetters = document.querySelectorAll(".hide");
     let res;
-    if (unguessedLetters.length !== 0)
+    if (unguessedLetters.length !== 0) 
       res = false;
-    else {
+    else if (unguessedLetters.length === 0 && this.missed !== 5) {
       res = true;
     }
     return res;
@@ -66,7 +66,11 @@ won
     let nextRemainingTry = lives[this.missed - 1];
     let image = nextRemainingTry.firstChild;
     image.src = "./images/lostHeart.png";
+
+    if (this.missed === 5) {
+      this.gameOver(false);
     }
+  }
 
   /**
    * Displays game over message
@@ -76,15 +80,19 @@ won
     const h1 = document.querySelector("#game-over-message");
     const overlay = document.querySelector("#overlay");
     if (gameWon === true) {
+      document.getElementById("overlay").style.display = "flex";
       overlay.classList.remove("start");
+      overlay.classList.remove("lose");
       overlay.classList.add("win");
-      document.getElementById("overlay").style.display = "flex";
       h1.textContent = "You made it!";
+      this.gameReset();
     } else if (gameWon === false) {
-      overlay.classList.remove("start");
-      overlay.classList.add("lose");
       document.getElementById("overlay").style.display = "flex";
+      overlay.classList.remove("start");
+      overlay.classList.remove("win");
+      overlay.classList.add("lose");
       h1.textContent = "Better luck next time! Why not try again?";
+      this.gameReset();
     }
   }
   /**
@@ -97,22 +105,14 @@ won
       button.classList.add("chosen");
       this.activePhrase.showMatchedLetter(button.textContent);
     } else if (this.activePhrase.checkLetter(button.textContent) !== true) {
-
       button.disabled = true;
       button.classList.remove("chosen");
-        button.classList.add("wrong");
-        this.removeLife();
+      button.classList.add("wrong");
+      this.removeLife();
     }
-      if (this.checkForWin() === true) {
-        this.gameOver(true);
-        this.gameReset();
-      } 
-      if (this.missed === 5)
-     {
-      this.gameOver(false);
-      this.gameReset();
-      }
-    
+    if (this.checkForWin() === true) {
+      this.gameOver(true);
+    }
   }
 
   gameReset() {
