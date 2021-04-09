@@ -8,133 +8,141 @@ btnReset.addEventListener("click", (e) => {
   game.startGame();
 
 });
+const qwerty = document.querySelector('#qwerty');
+const letters = qwerty.querySelectorAll('.key');
+console.log(letters);
+// console.log(letters[7]);
 
-const keyA = document.querySelector("#a");
+
+const keyA = letters[10];
 keyA.addEventListener("click", (e) => {
   game.handleInteraction(keyA);
 });
 
-const keyB = document.querySelector("#b");
+const keyB = letters[23];
 keyB.addEventListener("click", (e) => {
   game.handleInteraction(keyB);
 });
 
-const keyC = document.querySelector("#c");
+// const keyC = document.querySelector("#c");
+const keyC = letters[21];
 keyC.addEventListener("click", (e) => {
   game.handleInteraction(keyC);
 });
 
-const keyD = document.querySelector("#d");
+// const keyD = document.querySelector("#d");
+const keyD = letters[12];
 keyD.addEventListener("click", (e) => {
   game.handleInteraction(keyD);
 });
 
-const keyE = document.querySelector("#e");
+// const keyE = document.querySelector("#e");
+const keyE = letters[2];
 keyE.addEventListener("click", (e) => {
   game.handleInteraction(keyE);
 });
 
-const keyF = document.querySelector("#f");
+const keyF = letters[13];
 keyF.addEventListener("click", (e) => {
   game.handleInteraction(keyF);
 });
 
-const keyG = document.querySelector("#g");
+const keyG = letters[14];
 keyG.addEventListener("click", (e) => {
   game.handleInteraction(keyG);
 });
 
-const keyH = document.querySelector("#h");
+const keyH = letters[15]; 
 keyH.addEventListener("click", (e) => {
   game.handleInteraction(keyH);
 });
 
-const keyI = document.querySelector("#i");
+const keyI = letters[7];
 keyI.addEventListener("click", (e) => {
   game.handleInteraction(keyI);
 });
 
-const keyJ = document.querySelector("#j");
+const keyJ = letters[16];
 keyJ.addEventListener("click", (e) => {
   game.handleInteraction(keyJ);
 });
 
-const keyK = document.querySelector("#k");
+const keyK = letters[17];
 keyK.addEventListener("click", (e) => {
   game.handleInteraction(keyK);
 });
 
-const keyL = document.querySelector("#l");
+const keyL = letters[18];
 keyL.addEventListener("click", (e) => {
   game.handleInteraction(keyL);
 });
 
-const keyM = document.querySelector("#m");
+const keyM = letters[25];
 keyM.addEventListener("click", (e) => {
   game.handleInteraction(keyM);
 });
 
-const keyN = document.querySelector("#n");
+const keyN = letters[24];
 keyN.addEventListener("click", (e) => {
   game.handleInteraction(keyN);
 });
 
-const keyO = document.querySelector("#o");
+const keyO = letters[8];
 keyO.addEventListener("click", (e) => {
   game.handleInteraction(keyO);
 });
 
-const keyP = document.querySelector("#p");
+const keyP = letters[9];
 keyP.addEventListener("click", (e) => {
   game.handleInteraction(keyP);
 });
 
-const keyQ = document.querySelector("#q");
+const keyQ = letters[0];
 keyQ.addEventListener("click", (e) => {
   game.handleInteraction(keyQ);
 });
 
-const keyR = document.querySelector("#r");
+const keyR = letters[3];
 keyR.addEventListener("click", (e) => {
   game.handleInteraction(keyR);
 });
 
-const keyS = document.querySelector("#s");
+const keyS = letters[11];
 keyS.addEventListener("click", (e) => {
   game.handleInteraction(keyS);
 });
 
-const keyT = document.querySelector("#t");
+const keyT = letters[4];
 keyT.addEventListener("click", (e) => {
   game.handleInteraction(keyT);
 });
 
-const keyU = document.querySelector("#u");
+const keyU = letters[6];
 keyU.addEventListener("click", (e) => {
   game.handleInteraction(keyU);
 });
 
-const keyV = document.querySelector("#v");
+const keyV = letters[22];
 keyV.addEventListener("click", (e) => {
   game.handleInteraction(keyV);
 });
 
-const keyW = document.querySelector("#w");
+const keyW = letters[1];
 keyW.addEventListener("click", (e) => {
   game.handleInteraction(keyW);
 });
 
-const keyX = document.querySelector("#x");
+const keyX = letters[20];
 keyX.addEventListener("click", (e) => {
   game.handleInteraction(keyX);
 });
 
-const keyY = document.querySelector("#y");
+const keyY = letters[5];
 keyY.addEventListener("click", (e) => {
   game.handleInteraction(keyY);
 });
 
-const keyZ = document.querySelector("#z");
+const keyZ = letters[19];
 keyZ.addEventListener("click", (e) => {
   game.handleInteraction(keyZ);
 });
