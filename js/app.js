@@ -10,7 +10,6 @@ btnReset.addEventListener("click", (e) => {
 });
 const qwerty = document.querySelector('#qwerty');
 const letters = qwerty.querySelectorAll('.key');
-console.log(letters);
 
 
 const keyA = letters[10];
