@@ -104,14 +104,15 @@ won
       button.disabled = true;
       button.classList.add("chosen");
       this.activePhrase.showMatchedLetter(button.textContent);
+
+    if (this.checkForWin() === true) {
+      this.gameOver(true);
+    }
     } else if (this.activePhrase.checkLetter(button.textContent) !== true) {
       button.disabled = true;
       button.classList.remove("chosen");
       button.classList.add("wrong");
       this.removeLife();
-    }
-    if (this.checkForWin() === true) {
-      this.gameOver(true);
     }
   }
 
